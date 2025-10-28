@@ -215,7 +215,7 @@ h3 {
 
 
 #home {
-  align-items: start;
+  align-items: center;
   gap: 4rem;
   height: 100vh;
   padding-top: 0;
@@ -552,3 +552,4 @@ footer {
 .hidden {
   display: none !important;
 }
+
