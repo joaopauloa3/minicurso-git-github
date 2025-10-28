@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  flex-wrap: wrap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  color: white;
+}
+
+.jetbrains{
+  font-family: "JetBrains Mono", monospace;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.08); /* leve transparência */
+  backdrop-filter: blur(.2rem) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+body {
+  background: #02000a;
+}
+
+#starfield {
+  position: fixed;
+  inset: 0;                /* top:0; right:0; bottom:0; left:0 */
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;             /* atrás do conteúdo */
+  display: block;
+  pointer-events: none;    /* não atrapalha cliques na página */
+  background: linear-gradient(
+    151deg,
+    rgba(2, 0, 10, 1) 0%,
+    rgba(54, 0, 129, 1) 100%
+  ); 
+  }
+
+/* opcional: ajuste o contraste do conteúdo se quiser */
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+header {
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3.2rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  & img {
+    height: 80%
+  }
+
+  & div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3.2rem
+  }
+
+  & div button {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .6rem;
+    border: none;
+    border-radius: .4rem;
+    padding: .8rem 2.4rem;
+    color: rgba(2, 0, 10, 1);
+    cursor: pointer;
+    width: max-content;
+    font-size: clamp(.8rem, 1.2vw + 1rem, 1.6rem);
+  }
+
+  & div button i {
+    
+  font-size: clamp(.8rem, 1.2vw + 1rem, 1.6rem);
+  }
+
+  & div a {
+    gap: .6rem;
+    border: .1rem solid white;
+    border-radius: .4rem;
+    padding: .8rem 2.4rem;
+    color: white;
+    cursor: pointer;
+  font-size: clamp(.8rem, 1.2vw + 1rem, 1.6rem);
+  }
+
+}
+
+main {
+  max-width: 130rem;
+  margin: auto;
+  padding: 0rem 8rem 8rem 8rem;
+}
+
+section {
+  min-height: 80vh;
+  padding-top: 8.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  color: white;
+  font-size: clamp(2.4rem, 3vw + 1rem, 4.8rem);
+  text-align: center;
+}
+h3 {
+  color: white;
+  font-size: clamp(.8rem, 1.6vw + 1rem, 2.4rem);
+  text-align: center;
+}
+
+
+#home {
+  align-items: start;
+  gap: 4rem;
+  height: 100vh;
+  padding-top: 0;
+  
+  & h1 {
+    color: white;
+    font-size: clamp(3rem, 5vw + 1rem, 6rem);
+    text-align: center;
+
+    & img {
+      width: clamp(3rem, 5vw + 1rem, 6rem);
+      margin-left: 1rem;
+    }
+  }
+}
+
+.authors {
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+
+  & span {
+    font-size: clamp(.8rem, 1.2vw + 1rem, 1.6rem);
+  }
+}
+
+
+.guide {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+
+  & a {
+    cursor: pointer;
+    color: white; 
+    padding: .8rem 2.4rem;
+    border-radius: .4rem;
+  }
+}
+
+
+
+
+
+
+
+#what-are {
+  gap: 2.4rem;
+}
+
+.container-explain {
+  margin-top: 0rem;
+  min-height: 58vh; 
+
+  & > div {
+    width: 48%;
+    padding: 3.2rem;
+    min-height: 56vh;
+    height: 100%;
+    border-radius: .5rem;
+    flex-direction: column;
+    align-items: start;
+    gap: 2.4rem;
+  }
+
+  & > div > p {
+    font-size: clamp(.8rem, 1.2vw + 1rem, 1.6rem);
+    line-height: 180%;
+    font-weight: 400;
+  } 
+}
+
+.icon-explain {
+  justify-content: start;
+  padding: 0rem 0 .6rem 0;
+
+  & img {
+      width: clamp(.8rem, 2vw + 1rem, 3rem);
+      margin-left: 1.6rem;
+  }
+}
+
+.example-directories {
+  gap: 3.2rem;
+  padding: 2.4rem;
+  border-radius: .5rem;
+  align-items: center;
+  justify-content: center; 
+}
+
+.directories {
+  width: 50%;
+}
+.directories img {
+  width: 100%;
+}
+
+.text-directory {
+  display: flex;          
+  flex-direction: column;  
+  justify-content: space-between;
+  height: 100%;
+  gap: 2.4rem;
+  width: 40%;
+}
+
+
+
+
+
+
+#advantages {
+  gap: 3.2rem;
+}
+
+
+.menu-exemple-vesions {
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  & > i {
+    font-size: clamp(1.6rem, 2.4vw + 1rem, 3rem);
+  }
+
+  & > div {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  & > div > p {
+    font-size: clamp(1rem, 1.2vw + 1rem, 1.6rem);
+    width: 100%;
+    text-align: left;
+  }
+
+  & > div > div > i {
+    font-size: clamp(2rem, 3vw + 1rem, 4rem);
+    color: black;
+  }
+
+  & > div > div > img {
+    width: clamp(2rem, 3vw + 1rem, 4rem);
+  }
+}
+
+.icons-fa,
+.icons-phos {
+  gap: 2.4rem;
+  background: white;
+  border-radius: .6rem;
+  padding: 1rem 4rem;
+}
+
+
+
+
+
+

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git e GitHub</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+  </head>
+  <body>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div class="container">
+      <main>
+        <header>
+          <img src="/assets/github_ufr.svg" alt="" />
+
+          <div>
+            <button>Guia<i class="ph ph-caret-down"></i></button>
+            <button>Links Úteis <i class="ph ph-caret-down"></i></button>
+            <a href="">Mural da turma</a>
+          </div>
+        </header>
+        <section id="home">
+          <h1 class="jetbrains">Minicurso de Git<img src="./assets/logo_git.svg" alt="Logo Git"> e GitHub<img src="./assets/log_github.svg"> </h1>
+          <div class=" flex authors jetbrains">
+            <span>João Paulo Babroza dos Santos</span> <br>
+            <span>Jordana Bezerra de Almeida</span>
+          </div>
+          <div class="guide">
+            <a class="glass" href="#what-are">O que são</a>
+            <a class="glass" href="#advantages">Vantagens</a>
+            <a class="glass" href="#how-work">Como funciona</a>
+            <a class="glass" href="#practice">Prática</a>
+          </div>
+        </section>
+        <section id="what-are">
+          <div class="top-section">
+            <h1>O que são:</h1>
+            <h3>Versionadores de arquivos e pastas</h3>
+          </div>
+          <div class="container-explain flex">
+            <div class="flex glass git-explain">
+              <div>
+                <div class="flex icon-explain">
+                  <h3>Git</h3>
+                  <img src="./assets/logo_git.svg" alt="" srcset="">
+                </div>
+                <p>Criador: Linus Torvalds</p>
+              </div>
+              <p>
+                Permite que várias pessoas trabalhem em um projeto
+                simultaneamente, mantendo um histórico de todas as alterações
+                feitas. Cada desenvolvedor pode criar sua própria cópia (clone)
+                do repositório do Git, trabalhar em suas mudanças em um ambiente
+                isolado e, em seguida, mesclar (merge) essas mudanças de volta
+                ao repositório principal. Isso torna o desenvolvimento
+                colaborativo mais eficiente e ajuda a evitar conflitos
+              </p>
+            </div>
+            <div class="flex glass github-explain">
+              <div>
+                <div class="flex icon-explain">
+                  <h3>GitHub</h3>
+                  <img src="./assets/log_github.svg" alt="" srcset="">
+                </div>
+                <p>
+                  Fundadores: Chris Wanstrath, Scott Chacon, Tom
+                  Preston-Werner,Hyett
+                </p>
+              </div>
+              <p>
+                Onde os repositórios Git são hospedados e podem ser acessados
+                por qualquer pessoa com permissão. Desenvolvedores podem
+                contribuir para projetos abertos enviando solicitações de pull
+                (pull requests) para sugerir mudanças e melhorias. Além disso, o
+                GitHub fornece ferramentas para rastrear problemas, gerenciar
+                projetos, criar wikis e colaborar de maneira eficiente
+              </p>
+            </div>
+          </div>
+          <div class="flex glass example-directories">
+            <div class="directories">
+              <img src="./assets/directorys.svg" alt="" srcset="">
+            </div>
+            <div class="text-directory flex">
+              <p>
+                A pasta .git é um banco de dados (repositório local) aonde
+                estão, de fato, todos os arquivos e diretórios alterados.
+              </p>
+              <p>
+                Essa pasta é acessada e manuseada através de comandos no
+                terminal.
+              </p>
+              <p>
+                Isso nos possibilita recuperar versões antigas de projetos de
+                forma simples
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="advantages">
+          <div class="top-section">
+            <h1>Vantagens:</h1>
+            <h3>Ter o poder de “viajar no tempo” e colaborar em equipe</h3>
+          </div>
+          <div class="flex menu-exemple-vesions">
+            <div class="flex make-joao">
+              <p>
+                Arquivo original <br />
+                (feito pelo João)
+              </p>
+              <div class="flex icons-phos">
+                <i class="ph-fill ph-house"></i>
+                <i class="ph-fill ph-gear"></i>
+                <i class="ph ph-question"></i>
+              </div>
+            </div>
+            <i class="ph ph-arrow-down"></i>
+            <div class="flex make-maria">
+              <p>
+                Arquivo editado com novos ícones <br />
+                (feito pelo Maria)
+              </p>
+              <div class="flex icons-fa">
+                <img src="./assets/icons-wrong/house..svg">
+                <img src="./assets/icons-wrong/gear.svg">
+                <img src="./assets/icons-wrong/help.svg">
+              </div>
+            </div>
+            <i class="ph ph-arrow-down"></i>
+            <div class="flex recovery-felipe">
+              <p>
+                Arquivo original <br />
+                (recuperado pelo Felipe)
+              </p>
+              <div class="flex icons-phos">
+                <i class="ph-fill ph-house"></i>
+                <i class="ph-fill ph-gear"></i>
+                <i class="ph ph-question"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="how-work">
+          <div class="top-section">
+            <h1>Como funciona:</h1>
+            <h3>Vamos entender o fluxo do Git e GitHub</h3>
+          </div>
+          <div class="redirect-how-work">
+            <a>Git <i></i></a>
+            <a>GitHub <i></i></a>
+          </div>
+        </section>
+        <section id="practice">
+          <div class="top-section">
+            <h1>Prática</h1>
+            <h3>Comandos Git para fluxo de trabalho</h3>
+          </div>
+          <div>
+            <code>
+              git init <br /><br />
+              gt add. <br />
+              git add [nome do arquivo] <br /><br />
+              git commit -m "mensagem informativa"
+            </code>
+          </div>
+          <div>
+            <code>
+              git clone [repositório do GitHub] <br /><br />
+              git checkout -b [nova branch] <br /><br />
+              git switch -b [nova branch] <br /><br />
+              git add . <br />
+              git add [nome do arquivo] <br /><br />
+              git commit -m “mensagem informativa”<br /><br />
+              git add [nome do arquivo] <br /><br />
+              git push origin [nova branch]
+            </code>
+          </div>
+        </section>
+        <footer>
+          <div class="support">
+            <img src="" alt="" />
+            <a href="https://ufr.edu.br/" target="_blank">
+              Apoio: UFR - Universidade Federal de Rondonópolis
+            </a>
+          </div>
+          <p>
+            Desenvolvido por: <br />
+            João Paulo<br />
+            Jordana
+          </p>
+        </footer>
+      </main>
+    </div>
+    <script>
+      (function() {
+        const canvas = document.getElementById('starfield');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d', { alpha: true });
+        let w = 0, h = 0, dpr = Math.max(window.devicePixelRatio || 1, 1);
+        let stars = [];
+
+        const STAR_COUNT = 180;
+        const STAR_MIN_R = 0.3;
+        const STAR_MAX_R = 1.6;
+        const COMET_INTERVAL_MS = 5000; // a cada 10s
+        const COMET_DURATION_MS = 1000;   // mais rápido
+        const COMET_COLOR = 'rgba(255,255,255,1)';
+
+        function resize() {
+          w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+          h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          canvas.style.width = w + 'px';
+          canvas.style.height = h + 'px';
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          generateStars();
+          drawStatic();
+        }
+
+        function rand(min, max) { return Math.random() * (max - min) + min; }
+
+        function generateStars() {
+          stars = [];
+          for (let i = 0; i < STAR_COUNT; i++) {
+            const r = rand(STAR_MIN_R, STAR_MAX_R);
+            const x = Math.random() * w;
+            const y = Math.random() * h;
+            const a = rand(0.6, 1);
+            stars.push({ x, y, r, a });
+          }
+        }
+
+        function drawStatic() {
+          ctx.clearRect(0, 0, w, h);
+          for (const s of stars) {
+            ctx.beginPath();
+            ctx.fillStyle = `rgba(255,255,255,${s.a})`;
+            ctx.shadowColor = `rgba(255,255,255,${s.a * 0.5})`;
+            ctx.shadowBlur = Math.max(0.5, s.r * 2);
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
+        }
+
+        let cometAnimating = false;
+        function launchComet() {
+          if (cometAnimating) return;
+          cometAnimating = true;
+
+          // passa reto pelo meio da tela
+          const startY = h / 2;
+          const startX = -0.1 * w;
+          const len = w * 1.2; // atravessa a tela toda
+          const startTime = performance.now();
+
+          function step(now) {
+            const elapsed = now - startTime;
+            const t = Math.min(1, elapsed / COMET_DURATION_MS);
+            const ease = 1 - Math.pow(1 - t, 2);
+            const x = startX + ease * len;
+            const y = startY;
+
+            drawStatic();
+            drawComet(x, y, ease);
+
+            if (t < 1) {
+              requestAnimationFrame(step);
+            } else {
+              setTimeout(() => {
+                drawStatic();
+                cometAnimating = false;
+              }, 60);
+            }
+          }
+          requestAnimationFrame(step);
+        }
+
+        function drawComet(cx, cy, progress) {
+          // cometa pequeno e rastro curto
+          const headRadius = Math.max(0.6, 2 * (1 - Math.abs(0.5 - progress))); 
+          const trailLen = 50;
+          const tailParticles = 15;
+
+          for (let i = 0; i < tailParticles; i++) {
+            const f = i / tailParticles;
+            const px = cx - f * trailLen;
+            const alpha = Math.max(0, (1 - f) * 0.4);
+            const size = headRadius * (1 - f) * 0.5;
+            const grad = ctx.createRadialGradient(px, cy, 0, px, cy, size * 6);
+            grad.addColorStop(0, `rgba(255,255,255,${alpha})`);
+            grad.addColorStop(1, 'rgba(255,255,255,0)');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(px, cy, size * 6, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          ctx.beginPath();
+          ctx.fillStyle = COMET_COLOR;
+          ctx.shadowColor = 'rgba(255,255,255,0.8)';
+          ctx.shadowBlur = 10;
+          ctx.arc(cx, cy, headRadius, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+
+        function startCometLoop() {
+          launchComet();
+          setInterval(launchComet, COMET_INTERVAL_MS);
+        }
+
+        window.addEventListener('resize', () => {
+          clearTimeout(window._starResizeTimeout);
+          window._starResizeTimeout = setTimeout(resize, 120);
+        });
+
+        resize();
+        startCometLoop();
+      })();
+
+
+      //adicioanr o nome do arquivo
+      const files = ["jp", "jordana"]
+
+    for (let index = 0; index < array.length; index++) {
+      const element = array[index];
+      
+    }
+
+    </script>
+
+  </body>
+</html>
