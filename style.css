@@ -55,7 +55,32 @@ body {
     rgba(2, 0, 10, 1) 0%,
     rgba(54, 0, 129, 1) 100%
   ); 
-  }
+}
+
+.earth {
+  position: absolute;
+  width: 40%;
+  top: 70vh;
+  left: -10%;
+  z-index: 1;
+}
+
+.galaxy {
+  position: absolute;
+  width: 50%;
+  top: 120vh;
+  right: 0%;
+  opacity: .2;
+  z-index: 1;
+}
+
+.marth {
+  position: absolute;
+  width: 20%;
+  top: 350vh;
+  left: 10%;
+  z-index: 1;
+}
 
 /* opcional: ajuste o contraste do conteúdo se quiser */
 .container {
@@ -63,11 +88,38 @@ body {
   z-index: 1;
 }
 
+
+main {
+  max-width: 130rem;
+  margin: auto;
+  padding: 0rem 8rem 0rem 8rem;
+}
+
+
+
 a {
   text-decoration: none;
   cursor: pointer;
+  color: white;
+  transition: .2s;
+}
+a:hover {
+  scale: 1.1;
 }
 
+.container-header {
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3.2rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+
+}
 
 header {
   height: 8rem;
@@ -79,6 +131,9 @@ header {
   top: 0;
   right: 0;
   left: 0;
+  
+  max-width: 130rem;
+  margin: auto;
 
   & img {
     height: 80%
@@ -121,13 +176,12 @@ header {
   font-size: clamp(.8rem, 1.2vw + 1rem, 1.6rem);
   }
 
+  & .floats-mobile .ph-list {
+    display: none !important;
+  }
+
 }
 
-main {
-  max-width: 130rem;
-  margin: auto;
-  padding: 0rem 8rem 8rem 8rem;
-}
 
 section {
   min-height: 80vh;
@@ -136,6 +190,16 @@ section {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+
+
+.top-section {
+  display:  flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: .8rem;
 }
 
 h1 {
@@ -211,7 +275,6 @@ h3 {
   & > div {
     width: 48%;
     padding: 3.2rem;
-    min-height: 56vh;
     height: 100%;
     border-radius: .5rem;
     flex-direction: column;
@@ -314,3 +377,178 @@ h3 {
 
 
 
+#how-work {
+  gap: 3.2rem;
+}
+
+.redirect-how-work {
+  gap: 3.2rem;
+
+  & a {
+    font-size: clamp(2rem, 2vw + .8rem, 2.4rem);
+    gap: .8rem;
+    border-radius: .6rem;
+    background: black;
+    padding: .6rem 1.6rem;
+    color: white;
+  }
+
+  & .redirect-git {
+    background: #FF4400;
+  }
+
+  & img {
+    width: clamp(2rem, 2vw + .8rem, 2.4rem);
+  }
+}
+
+
+
+
+
+#practice {
+  gap: 3.2rem;
+}
+
+.fs-p {
+  font-size: small;
+  margin-left: 24px;
+}
+
+.mt {
+  margin-top: -38px;
+}
+
+
+
+.window-mac {
+  width: 98%;
+  max-width: 63rem;
+  color: white;
+  background-color: #252525;
+  border-radius: 6px;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #111111;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.2rem;
+  border-radius: 6px 6px 0px 0;
+}
+
+.circles {
+  flex-direction: row;
+  gap: 1.2rem;
+}
+
+.circles > div {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 100%;
+}
+
+.red {
+  background-color: #FF3232;
+}
+.yellow {
+  background-color: #FFCC24;
+}
+
+.green {
+  background-color: #36B12A;
+}
+
+.body-window {
+  align-items: flex-start;
+  width: 100%;
+  font-size: 1.8rem;
+  padding: 2.4rem;
+  gap: 4rem;
+  flex-direction: column;
+}
+
+
+
+
+
+footer {
+  align-items: center;
+  height: 20vh;
+}
+
+
+
+
+
+
+@media screen and (max-width: 880px) {
+  .container-explain {
+    flex-direction: column;
+    gap: 2.4rem;
+
+    & > div {
+      width: 100%;
+    }
+  }
+  .example-directories {
+    flex-direction: column-reverse;
+
+    & .directories {
+      width: 100%;
+    }
+  }
+
+  .text-directory {
+    width: 100%;
+    align-items: flex-start;
+  }
+}
+
+
+@media screen and (max-width: 680px) {
+  header {
+    & > div {
+      display: none;
+    }
+    & > .floats-mobile {
+      display: flex;
+    }
+    
+    & .floats-mobile > .ph-list {
+      display: flex !important;
+      font-size: clamp(3rem, 5vw + 1rem, 4rem);
+      cursor: pointer;
+    }
+  }
+}
+
+.floats {
+  flex-direction: column;
+  position: fixed;
+  top: 7.5rem;
+  padding: 2.4rem;
+  align-items: start;
+  border-radius: .6rem;
+  gap: 1.6rem;
+  background: rgba(39, 21, 97, 1);
+  margin-left: -2.4rem;
+  box-shadow: 0 0 5rem rgba(0,0,0, 1);
+  & a {
+    gap: .8rem;
+  }
+  & img {
+    width: clamp(.8rem, 1.2vw + 1rem, 1.6rem);
+  }
+}
+
+.floats-mobile > .floats {
+  right: 2.4rem;
+} 
+
+
+.hidden {
+  display: none !important;
+}

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      type="text/css"
+      type="text/css" 
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
     />
     <link
@@ -19,17 +19,52 @@
   </head>
   <body>
     <canvas id="starfield" aria-hidden="true"></canvas>
+    <img class="earth" src="./assets/earth.svg">
+    <img class="galaxy" src="./assets/galaxy.svg">
+    <img src="./assets/marth.svg" class="marth">
     <div class="container">
       <main>
-        <header>
-          <img src="/assets/github_ufr.svg" alt="" />
+        <div id="container-header" class="container-header">
+          <header>
+            <img src="/assets/github_ufr.svg" alt="" />
+            <div class="floats-mobile">
+              <i class="ph ph-list" id="button-mobile-header"></i>
+              <div id="menu-mobile-float" class="floats hidden">
+                <a href="#what-are">O que são</a>
+                <a href="#advantages">Vantagens</a>
+                <a href="#how-work">Como funciona</a>
+                <a href="#practice">Prática</a>
+                    
+                <br>
 
-          <div>
-            <button>Guia<i class="ph ph-caret-down"></i></button>
-            <button>Links Úteis <i class="ph ph-caret-down"></i></button>
-            <a href="">Mural da turma</a>
-          </div>
-        </header>
+                <a href="https://github.com" target="_blank" class="flex">Github <img src="./assets/log_github.svg" alt="" srcset=""></a>
+                <a href="https://git-scm.com/install/windows" target="_blank" class="flex">Git <img src="./assets/logo_git.svg" alt="" srcset=""></a>
+                <a href="https://github.com/joaopauloa3/minicurso-git-github" target="_blank" class="flex">Repositório da aula<i class="ph-fill ph-folder"></i></a>
+              </div>
+            </div>
+  
+            <div>
+              <button id="button-guide-header" class="hidden">
+                <div id="guide-float" class="guide-header hidden floats">
+                  <a href="#what-are">O que são</a>
+                  <a href="#advantages">Vantagens</a>
+                  <a href="#how-work">Como funciona</a>
+                  <a href="#practice">Prática</a>
+                </div>
+                Guia<i class="ph ph-caret-down"></i>
+              </button>
+              <button  id="button-utils-header">
+                <div id="utils-float" class="utils-header hidden floats">
+                  <a href="https://github.com" target="_blank" class="flex">Github <img src="./assets/log_github.svg" alt="" srcset=""></a>
+                  <a href="https://git-scm.com/install/windows" target="_blank" class="flex">Git <img src="./assets/logo_git.svg" alt="" srcset=""></a>
+                  <a href="https://github.com/joaopauloa3/minicurso-git-github" target="_blank" class="flex">Repositório da aula<i class="ph-fill ph-folder"></i></a>
+                </div>
+                Links Úteis <i class="ph ph-caret-down"></i>
+              </button>
+              <a href="./mural/mural.html">Mural da turma</a>
+            </div>
+          </header>
+        </div>
         <section id="home">
           <h1 class="jetbrains">Minicurso de Git<img src="./assets/logo_git.svg" alt="Logo Git"> e GitHub<img src="./assets/log_github.svg"> </h1>
           <div class=" flex authors jetbrains">
@@ -76,7 +111,7 @@
                 <p>
                   Fundadores: Chris Wanstrath, Scott Chacon, Tom
                   Preston-Werner,Hyett
-                </p>
+                </p> 
               </div>
               <p>
                 Onde os repositórios Git são hospedados e podem ser acessados
@@ -156,9 +191,9 @@
             <h1>Como funciona:</h1>
             <h3>Vamos entender o fluxo do Git e GitHub</h3>
           </div>
-          <div class="redirect-how-work">
-            <a>Git <i></i></a>
-            <a>GitHub <i></i></a>
+          <div class="flex redirect-how-work">
+            <a class="flex redirect-git" href="https://www.tldraw.com/f/aFI1qaFsvOMTqGDnQoktO?d=v-234.-211.2795.1534.page" target="_blank">Git <img src="./assets/logo_git.svg"></a>
+            <a class="flex" href="https://www.tldraw.com/f/n_uILJGOmG0Op6RQ8_NhW?d=v7.-198.2478.1360.page" target="_blank">GitHub <img src="./assets/log_github.svg"></a>
           </div>
         </section>
         <section id="practice">
@@ -166,28 +201,48 @@
             <h1>Prática</h1>
             <h3>Comandos Git para fluxo de trabalho</h3>
           </div>
-          <div>
-            <code>
-              git init <br /><br />
-              gt add. <br />
-              git add [nome do arquivo] <br /><br />
-              git commit -m "mensagem informativa"
-            </code>
+          <div class="flex window-mac">
+            <div class=" flex header">
+              <div class=" flex circles">
+                <div class="red"></div>
+                <div class="yellow"></div>
+                <div class="green"></div>
+              </div>
+              <p>Git com repositório local</p>
+            </div>
+            <div class=" flex body-window">
+              <code>git init</code>
+              <code>git add . </code>
+              <span class="mt fs-p"> ou</span>
+              <code class="mt">git add [nome do arquivo]</code>
+              <code>git commit -m “mensagem informativa”</code>
+            </div>
           </div>
-          <div>
-            <code>
-              git clone [repositório do GitHub] <br /><br />
-              git checkout -b [nova branch] <br /><br />
-              git switch -b [nova branch] <br /><br />
-              git add . <br />
-              git add [nome do arquivo] <br /><br />
-              git commit -m “mensagem informativa”<br /><br />
-              git add [nome do arquivo] <br /><br />
-              git push origin [nova branch]
-            </code>
+
+          <div class="flex window-mac">
+            <div class=" flex header">
+              <div class=" flex circles">
+                <div class="red"></div>
+                <div class="yellow"></div>
+                <div class="green"></div>
+              </div>
+              <p>Git com GitHub</p>
+            </div>
+            <div class=" flex body-window">
+              <code>git clone [http do repositório do GitHub]</code>
+              <code>git checkout -b [nova branch]</code>
+              <code>git switch -b [nova branch]</code>
+              <code>git add . </code>
+              <span class="mt fs-p"> ou</span>
+              <code class="mt">git add [nome do arquivo]</code>
+              <code>git commit -m “mensagem informativa”</code>
+              <code>git push origin [nova branch]</code>
+              <br>
+              <code>git pull origin [branch que deseja "puxar"]</code>
+            </div>
           </div>
         </section>
-        <footer>
+        <footer class="flex">
           <div class="support">
             <img src="" alt="" />
             <a href="https://ufr.edu.br/" target="_blank">
@@ -195,8 +250,8 @@
             </a>
           </div>
           <p>
-            Desenvolvido por: <br />
-            João Paulo<br />
+            Desenvolvido por: <br /><br />
+            João Paulo<br /> &
             Jordana
           </p>
         </footer>
@@ -333,13 +388,48 @@
       })();
 
 
-      //adicioanr o nome do arquivo
-      const files = ["jp", "jordana"]
+      const guideHeader = document.getElementById('button-guide-header')
+      const utilsHeader = document.getElementById('button-utils-header')
+      const mobileHeader = document.getElementById('button-mobile-header')
 
-    for (let index = 0; index < array.length; index++) {
-      const element = array[index];
+      const mobileFloat = document.getElementById('menu-mobile-float')
+      const guideFloat = document.getElementById('guide-float')
+      const utilsFloat = document.getElementById('utils-float')
+      guideHeader.addEventListener('click', ()  => {
+        if (!utilsFloat.classList.contains('hidden')) {
+          utilsFloat.classList.toggle('hidden')
+        }
+        guideFloat.classList.toggle('hidden')
+      }); 
+
+      utilsHeader.addEventListener('click', ()  => {
+        if (!guideFloat.classList.contains('hidden')) {
+          guideFloat.classList.toggle('hidden')
+        }
+        utilsFloat.classList.toggle('hidden')
+      })
+
       
-    }
+      mobileHeader.addEventListener('click', ()  => {
+        mobileFloat.classList.toggle('hidden')
+      }); 
+
+
+      
+      window.addEventListener('scroll', () => {
+        const containerHeader = document.getElementById('container-header');
+        const scrollY = window.scrollY;
+        const triggerHeight = window.innerHeight * 0.7; // 70vh
+
+        if (scrollY > triggerHeight) {
+          guideHeader.classList.remove('hidden')
+          containerHeader.classList.add('glass')
+          
+        } else {
+          guideHeader.classList.add('hidden')
+          containerHeader.classList.remove('glass')
+        }
+      });
 
     </script>
 

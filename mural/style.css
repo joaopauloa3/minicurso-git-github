@@ -1,0 +1,45 @@
+body {
+    width: 100%;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+.container-button-back  {
+    width: 100%;
+}
+
+.button-back {
+    padding: 1.6rem 3.2rem;
+    border-radius: .6rem;
+    font-size: clamp(1rem, 1.2vw + 1rem, 1.6rem);
+}
+
+
+.main-mural {
+    margin-top: 10rem;
+    width: 95%;
+    max-width: 108rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4.8rem;
+    padding: 4rem;
+    border-radius: 1.6rem;
+}
+
+.container-buttons-participants {
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.button-participant {
+    padding: 1.6rem 3.2rem;
+    border-radius: .6rem;
+    font-size: clamp(1rem, 1.2vw + 1rem, 1.6rem);
+}
+
+.button-participant:hover {
+    border-radius: 2.4rem
+}
