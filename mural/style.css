@@ -4,6 +4,15 @@ body {
     justify-content: center !important;
 }
 
+.marth-mural {
+  position: fixed;
+  width: 20%;
+  bottom: -10rem;
+  left: -6%;
+  z-index: 1;
+  min-width: 30rem;
+}
+
 
 .container-button-back  {
     width: 100%;
