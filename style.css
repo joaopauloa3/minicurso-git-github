@@ -468,6 +468,11 @@ h3 {
   padding: 2.4rem;
   gap: 4rem;
   flex-direction: column;
+  & span {
+    font-size: 1.6rem;
+    color: #7e7e7eff;
+    line-height: 150%;
+  }
 }
 
 
