@@ -5,7 +5,6 @@
 Este mini curso é focado em apresentar os conceitos fundamentais de controle de versão, essenciais para qualquer projeto de desenvolvimento moderno.
 
 <img src="https://img.shields.io/badge/Git-F05033?style=for-the-badge&logo=git&logoColor=white"/>
-&nbsp
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 
 ---
