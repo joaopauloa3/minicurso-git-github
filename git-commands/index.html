@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minicurso: Comandos Git</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../mural/style.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/github_ufr.svg">
+</head>
+<body class="flex">
+    <img src="../assets/marth.svg"class="marth-mural">
+    
+    <div class="main-mural flex" style="margin-top: 0;">
+        <div class="container-button-back flex">
+            <a class="button-back flex glass" href="../index.html">Voltar</a>
+        </div>
+        <h1>Comandos git</h1>
+            <!-- GIT LOCAL -->
+            <div class="flex window-mac">
+            <div class="flex header">
+                <div class="flex circles">
+                <div class="red"></div>
+                <div class="yellow"></div>
+                <div class="green"></div>
+                </div>
+                <p>Git com Repositório Local</p>
+            </div>
+            <div class="flex body-window">
+                <span>// Configuração inicial do Git</span>
+                <code class="mt">git config --global user.name "Seu Nome"</code>
+                <code class="mt">git config --global user.email "seuemail@email.com"</code>
+                <code class="mt">git config --list</code>
+
+                <span>// Iniciar o versionamento na pasta atual</span>
+                <code class="mt">git init</code>
+
+                <span>// Verificar o estado dos arquivos</span>
+                <code class="mt">git status</code>
+
+                <span>// Adicionar todos os arquivos para a área de stage</span>
+                <code class="mt">git add .</code>
+                <span class="mt fs-p">ou</span>
+                <code class="mt">git add [nome-do-arquivo]</code>
+
+                <span>// Registrar as alterações no histórico</span>
+                <code class="mt">git commit -m "mensagem descritiva"</code>
+
+                <span>// Ver histórico de commits</span>
+                <code class="mt">git log</code>
+
+                <span>// Ver histórico resumido (por branch)</span>
+                <code class="mt">git log --oneline --graph --decorate</code>
+
+                <span>// Criar uma nova branch</span>
+                <code class="mt">git branch [nome-da-branch]</code>
+
+                <span>// Listar todas as branchs</span>
+                <code class="mt">git branch</code>
+
+                <span>// Mudar para outra branch</span>
+                <code class="mt">git switch [nome-da-branch]</code>
+
+                <span>// Unir uma branch à principal (geralmente “main” ou “master”)</span>
+                <code class="mt">git merge [nome-da-branch]</code>
+            </div>
+            </div>
+
+            <!-- GIT COM GITHUB -->
+            <div class="flex window-mac">
+            <div class="flex header">
+                <div class="flex circles">
+                <div class="red"></div>
+                <div class="yellow"></div>
+                <div class="green"></div>
+                </div>
+                <p>Git com GitHub</p>
+            </div>
+            <div class="flex body-window">
+                <span>// Clonar um repositório remoto</span>
+                <code class="mt">git clone [url-do-repositório]</code>
+
+                <span>// Entrar na pasta clonada</span>
+                <code class="mt">cd [nome-da-pasta]</code>
+
+                <span>// Verificar o repositório remoto conectado</span>
+                <code class="mt">git remote -v</code>
+
+                <span>// Criar uma nova branch</span>
+                <code class="mt">git branch [nome-da-branch]</code>
+
+                <span>// Mudar para a nova branch</span>
+                <code class="mt">git switch [nome-da-branch]</code>
+
+                <span>// Adicionar arquivos alterados</span>
+                <code class="mt">git add .</code>
+
+                <span>// Registrar as alterações</span>
+                <code class="mt">git commit -m "mensagem descritiva"</code>
+
+                <span>// Enviar alterações da branch atual para o GitHub</span>
+                <code class="mt">git push origin [nome-da-branch]</code>
+
+                <span>// Atualizar seu repositório local com mudanças do remoto</span>
+                <code class="mt">git pull origin [nome-da-branch]</code>
+            </div>
+            </div>
+
+        </d>
+    </div>
+
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <script>
+        
+        (function() {
+            const canvas = document.getElementById('starfield');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d', { alpha: true });
+            let w = 0, h = 0, dpr = Math.max(window.devicePixelRatio || 1, 1);
+            let stars = [];
+
+            const STAR_COUNT = 180;
+            const STAR_MIN_R = 0.3;
+            const STAR_MAX_R = 1.6;
+            const COMET_INTERVAL_MS = 5000; // a cada 10s
+            const COMET_DURATION_MS = 1000;   // mais rápido
+            const COMET_COLOR = 'rgba(255,255,255,1)';
+
+            function resize() {
+                w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+                canvas.width = Math.floor(w * dpr);
+                canvas.height = Math.floor(h * dpr);
+                canvas.style.width = w + 'px';
+                canvas.style.height = h + 'px';
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                generateStars();
+                drawStatic();
+            }
+
+            function rand(min, max) { return Math.random() * (max - min) + min; }
+
+            function generateStars() {
+                stars = [];
+                for (let i = 0; i < STAR_COUNT; i++) {
+                const r = rand(STAR_MIN_R, STAR_MAX_R);
+                const x = Math.random() * w;
+                const y = Math.random() * h;
+                const a = rand(0.6, 1);
+                stars.push({ x, y, r, a });
+                }
+            }
+
+            function drawStatic() {
+                ctx.clearRect(0, 0, w, h);
+                for (const s of stars) {
+                ctx.beginPath();
+                ctx.fillStyle = `rgba(255,255,255,${s.a})`;
+                ctx.shadowColor = `rgba(255,255,255,${s.a * 0.5})`;
+                ctx.shadowBlur = Math.max(0.5, s.r * 2);
+                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+                }
+            }
+
+            let cometAnimating = false;
+            function launchComet() {
+                if (cometAnimating) return;
+                cometAnimating = true;
+
+                // passa reto pelo meio da tela
+                const startY = h / 2;
+                const startX = -0.1 * w;
+                const len = w * 1.2; // atravessa a tela toda
+                const startTime = performance.now();
+
+                function step(now) {
+                const elapsed = now - startTime;
+                const t = Math.min(1, elapsed / COMET_DURATION_MS);
+                const ease = 1 - Math.pow(1 - t, 2);
+                const x = startX + ease * len;
+                const y = startY;
+
+                drawStatic();
+                drawComet(x, y, ease);
+
+                if (t < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    setTimeout(() => {
+                    drawStatic();
+                    cometAnimating = false;
+                    }, 60);
+                }
+                }
+                requestAnimationFrame(step);
+            }
+
+            function drawComet(cx, cy, progress) {
+                // cometa pequeno e rastro curto
+                const headRadius = Math.max(0.6, 2 * (1 - Math.abs(0.5 - progress))); 
+                const trailLen = 50;
+                const tailParticles = 15;
+
+                for (let i = 0; i < tailParticles; i++) {
+                const f = i / tailParticles;
+                const px = cx - f * trailLen;
+                const alpha = Math.max(0, (1 - f) * 0.4);
+                const size = headRadius * (1 - f) * 0.5;
+                const grad = ctx.createRadialGradient(px, cy, 0, px, cy, size * 6);
+                grad.addColorStop(0, `rgba(255,255,255,${alpha})`);
+                grad.addColorStop(1, 'rgba(255,255,255,0)');
+                ctx.fillStyle = grad;
+                ctx.beginPath();
+                ctx.arc(px, cy, size * 6, 0, Math.PI * 2);
+                ctx.fill();
+                }
+
+                ctx.beginPath();
+                ctx.fillStyle = COMET_COLOR;
+                ctx.shadowColor = 'rgba(255,255,255,0.8)';
+                ctx.shadowBlur = 10;
+                ctx.arc(cx, cy, headRadius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+
+            function startCometLoop() {
+                launchComet();
+                setInterval(launchComet, COMET_INTERVAL_MS);
+            }
+
+            window.addEventListener('resize', () => {
+                clearTimeout(window._starResizeTimeout);
+                window._starResizeTimeout = setTimeout(resize, 120);
+            });
+
+            resize();
+            startCometLoop();
+        })();                           
+
+
+        const participants = [
+            // { name: "name", file: "name_file sem sufixo" },
+        ];
+
+        const container = document.querySelector('.container-buttons-participants');
+
+        participants.forEach(participant => {
+            const a = document.createElement('a');
+            a.href = `./turma/${participant.file}.html`;
+            a.className = 'button-participant glass';
+            a.textContent = participant.name;
+            container.appendChild(a);
+        });
+    </script>
+</body>
+</html>
