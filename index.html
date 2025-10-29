@@ -43,7 +43,7 @@
                 <a href="https://github.com" target="_blank" class="flex">Github <img src="./assets/log_github.svg" alt="" srcset=""></a>
                 <a href="https://git-scm.com/install/windows" target="_blank" class="flex">Git <img src="./assets/logo_git.svg" alt="" srcset=""></a>
                 <a href="https://github.com/joaopauloa3/minicurso-git-github" target="_blank" class="flex">Repositório da aula<i class="ph-fill ph-folder"></i></a>
-                <a href="./git-commands/index.html" target="_self" class="flex">Comandos Git<i class="ph ph-git"></i></a>
+                <a href="./git-commands/index.html" target="_self" class="flex">Comandos Git<i class="ph ph-git-branch"></i></a>
               </div>
             </div>
   
@@ -216,7 +216,8 @@
               <p>Git com repositório local</p>
             </div>
             <div class=" flex body-window">
-              <code>git config --global user.email "seuemail@email.com"</code>
+              <span>// Comando para fazer as configurações iniciais e obrigatórias do Git</span>
+              <code class="mt">git config --global user.email "seuemail@email.com"</code>
               <code class="mt">git config --global user.name "Seu nome"</code>
               <code>git init</code>
               <code>git add . </code>
@@ -224,6 +225,10 @@
               <code class="mt">git add [nome do arquivo]</code>
               <code>git status</code>
               <code>git commit -m “mensagem informativa”</code>
+              <br>
+              <span>// Comando para apagar do Git</span>
+              <code class="mt">git config --global --unset user.email</code>
+              <code class="mt">git config --global --unset user.name</code>
             </div>
           </div>
 

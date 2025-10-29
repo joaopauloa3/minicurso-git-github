@@ -464,12 +464,12 @@ h3 {
 .body-window {
   align-items: flex-start;
   width: 100%;
-  font-size: 1.8rem;
+    font-size: clamp(1.2rem, 1.2vw + 1rem, 1.8rem);
   padding: 2.4rem;
   gap: 4rem;
   flex-direction: column;
   & span {
-    font-size: 1.6rem;
+    font-size: clamp(0.9rem, 1vw + 1rem, 1.5rem);
     color: #7e7e7eff;
     line-height: 150%;
   }
